@@ -44,7 +44,7 @@ namespace MicroRabbit.Banking.Api
 
             services.AddDbContext<BankingDbContext>(item =>item.UseSqlServer(Configuration.GetConnectionString("BankingDbConnection")));
             //services.AddDefaultIdentity<Account>().AddEntityFrameworkStores<BankingDbContext>();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+         //   services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
@@ -81,8 +81,6 @@ namespace MicroRabbit.Banking.Api
             app.UseSwaggerUI(c => {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json","Banking Microservice V1");           
             });
-
-            app.UseMvc();
 
             app.UseRouting();
 
